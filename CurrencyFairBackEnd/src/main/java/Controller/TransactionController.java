@@ -29,7 +29,6 @@ public class TransactionController {
         boolean flag = false;
         Message message = new Message();
         try {
-            System.out.println();
             try {
                 message = Message.toMessage(messageCreateRequest);
             } catch (MessageDateFormatException e) {

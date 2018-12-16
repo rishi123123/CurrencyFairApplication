@@ -116,7 +116,6 @@ public class Message {
         DateFormat df = new SimpleDateFormat("dd-MMM-yy HH:mm:ss");
         try {
             formatteddate = df.parse(dateString);
-            System.out.println("Formatted date" + formatteddate);
         } catch (ParseException ex) {
             throw new MessageDateFormatException("Message Format is not the expected format : dd-MMM-yy HH:mm:ss");
         }
