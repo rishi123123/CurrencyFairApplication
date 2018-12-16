@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rishikesh </title>
+</head>
+<body>
+<div id='root'></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+<script type="text/babel">
+  var Message = React.createClass({
+    render: function() {
+      return (
+        <tr>
+          <td>{this.state.message.userId}</td>
+          <td>{this.props.message.currencyFrom}</td>
+          <td>{this.props.message.currencyTo}</td>
+          <td>{this.props.message.amoutSell}</td>
+          <td>{this.props.message.amountBuy}</td>
+          <td>{this.props.message.rate}</td>
+          <td>{this.props.message.timePlaced}</td>
+          <td>{this.props.message.originatingCountry}</td>
+
+        </tr>);
+    }
+  });
+
+  var MessageTable = React.createClass({
+    render: function() {
+      var rows = [];
+      debugger;
+      console.log(this.state.message)
+      this.state.messages.forEach(function(message) {
+        rows.push(<Message message={message} />);
+      });
+      return (
+        <div className="container">
+          <table className="table table-striped">
+            <thead>
+            <tr>
+              <th>UserID</th>
+              <th>CurrencyFrom</th>
+              <th>CurrencyTo</th>
+              <th>Amount_Sell</th>
+              <th>Amount_Buy</th>
+              <th>Rate</th>
+              <th>Time_Placed</th>
+              <th>Originating_Country</th>
+            </tr>
+            </thead>
+            <tbody>{rows}</tbody>
+          </table>
+        </div>);
+    }
+  });
+
+  var App =  React.createClass({
+    loadMessagesFromServer: function() {
+      var self = this;
+      $.ajax({
+        url:"http://localhost:8080/getMessages"
+      }).then(function(data) {
+        console.log(data);
+        self.setProp({messages: data._embedded.messages});
+      });
+    },
+    getInitialState: function() {
+      return {messages: []};
+    },
+    componentDidMount: function() {
+      this.loadMessagesFromServer();
+    },
+    render() {
+      return(<MessageTable messages={this.state.messages}/>)
+    }
+  });
+
+
+  ReactDOM.render(<App />, document.getElementById('root') );
+
+
+</script>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+</body>
+</html>

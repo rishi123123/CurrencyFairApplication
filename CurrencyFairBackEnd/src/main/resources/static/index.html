@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rishikesh </title>
+</head>
+<body>
+<div id='root'></div>
+
+<script src="https://fb.me/react-15.0.1.js"></script>
+<script src="https://fb.me/react-dom-15.0.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<script type="text/babel">
+  var Message = React.createClass({
+    render: function() {
+      return (
+        <tr>
+          <td>{this.props.message.userId}</td>
+          <td>{this.props.message.currencyFrom}</td>
+          <td>{this.props.message.currencyTo}</td>
+        </tr>);
+    }
+  });
+
+  var MessageTable = React.createClass({
+    render: function() {
+      var rows = [];
+      this.props.messages.forEach(function(message) {
+        rows.push(<Message message={message} />);
+      });
+      return (
+        <div className="container">
+          <table className="table table-striped">
+            <thead>
+            <tr>
+              <th>UserId</th>
+              <th>CurrencyFrom</th>
+              <th>CurrencyTo</th>
+            </tr>
+            </thead>
+            <tbody>{rows}</tbody>
+          </table>
+        </div>);
+    }
+  });
+
+    var App = React.createClass({
+
+      loadEmployeesFromServer: function () {
+        var self = this;
+        $.ajax({
+          url: "http://localhost:8080/getMessages"
+        }).then(function (data) {
+          console.log(data);
+        });
+      },
+
+      getInitialState: function () {
+        return {messages: []};
+      },
+
+      componentDidMount: function () {
+        this.loadEmployeesFromServer();
+      },
+
+      render() {
+        return ( <EmployeeTable employees={this.state.messages}/> );
+      }
+    });
+
+  ReactDOM.render(
+    <App messages={MESSAGES} />, document.getElementById('root')
+  );
+</script>
+
+</body>
+</html>
