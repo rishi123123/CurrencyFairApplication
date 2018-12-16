@@ -84,12 +84,12 @@ class App extends React.Component {
     const data_statistics = await api_call_statistics.json();
     let messageStatisticsFromAPI = {
       count: data_statistics.transactionCount,
-      sumAmountBuy: data_statistics.sumAmountSell,
-      avgAmountBuy:data_statistics.avgAmountSell,
-      maxAmountBuy:data_statistics.maxAmountSell,
-      sumAmountSell:data_statistics.sumAmountBuy,
-      avgAmountSell:data_statistics.avgAmountBuy,
-      maxAmountSell:data_statistics.maxAmountBuy
+      sumAmountBuy: data_statistics.sumAmountBuy,
+      avgAmountBuy:data_statistics.avgAmountBuy,
+      maxAmountBuy:data_statistics.maxAmountBuy,
+      sumAmountSell:data_statistics.sumAmountSell,
+      avgAmountSell:data_statistics.avgAmountSell,
+      maxAmountSell:data_statistics.maxAmountSell
     }
     this.setState({
       messagesStatistics:messageStatisticsFromAPI
