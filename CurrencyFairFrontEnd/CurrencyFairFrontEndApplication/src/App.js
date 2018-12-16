@@ -30,7 +30,7 @@ class App extends React.Component {
     dataForBar: [],
     dataForLine: []
   }
-  getWeather = async (e) => {
+  getMessages = async (e) => {
     e.preventDefault();
     const originatingCounty = e.target.elements.originatingCountry.value;
     const currencyFrom = e.target.elements.currencyFrom.value;
@@ -184,7 +184,7 @@ class App extends React.Component {
                   <Titles />
                 </div>
                 <div className="col-xs-7 form-container">
-                  <Form getWeather={this.getWeather} />
+                  <Form getMessages={this.getMessages} />
                   <div id='firstTable'>
                     <table >
                       <tr>
