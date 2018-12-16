@@ -21,15 +21,18 @@ AWS:
 
 	The Backend Data is processed to populate the page with 
 	1. Messages Table with filters for Currency from (example: EUR), Currency To (example : INR), Originating Country (example = FR)
-	2. Messages In Last 60 Second Window Table with the same filters as above. This table shows messages in and its statistics in the last 60 Second time frame. It also shows 	the statistics for the time window.
+	2. Messages In Last 60 Second Window Table with the same filters as above. This table shows messages in and its statistics in the 
+	last 60 Second time frame. It also shows the statistics for the time window.
 	3. Section Graphs.
-	3 Graphs are displayed on the dashboard. On Click of the Update Graph button the graphs are loaded with data from api calls to the backed and displayed.
+	3 Graphs are displayed on the dashboard. On Click of the Update Graph button the graphs are loaded with data from api calls to the 
+	backed and displayed.
 	Graph - Count Line Chart
 		The count line chart shows the amount of transactions against the currency. 
 	Graph - Pie chart
 		The Pie chart shows a representation of the ratio of the countries from which the transactions are originating.
 	Graph - Line Chart
-		The line chart shows the amount of transactions per year on a line graph which makes it very easy to visualize the change in volume of transactions.
+		The line chart shows the amount of transactions per year on a line graph which makes it very easy to visualize the change in 
+		volume of transactions.
 
 AWS:
 	The backend built war is deployed on AWS Elastic BeanStalk. URL : http://currencyfair-rishikesh.us-east-2.elasticbeanstalk.com/
@@ -39,18 +42,22 @@ AWS:
 	The front end is built using React.js.
 
 	AWS:
-		The application is hosted on AWS S3 buckets. Built and deployed using npm. npm run build and then npm run deploy will automatically deploy the changes to the S3 bucket.
+		The application is hosted on AWS S3 buckets. Built and deployed using npm. npm run build and then npm run deploy will 
+		automatically deploy the changes to the S3 bucket.
 		URL : http://currencyfairapp.com.s3-website-eu-west-1.amazonaws.com/
 
 	1. Messages Table with filters for Currency from (example: EUR), Currency To (example : INR), Originating Country (example = FR)
-	2. Messages In Last 60 Second Window Table with the same filters as above. This table shows messages in and its statistics in the last 60 Second time frame. It also shows the statistics for the time window.
+	2. Messages In Last 60 Second Window Table with the same filters as above. This table shows messages in and its statistics in 
+	the last 60 Second time frame. It also shows the statistics for the time window.
 	3. Section Graphs.
-	3 Graphs are displayed on the dashboard. On Click of the Update Graph button the graphs are loaded with data from api calls to the backed and displayed.
+	3 Graphs are displayed on the dashboard. On Click of the Update Graph button the graphs are loaded with data from api calls 
+	to the backed and displayed.
 	Graph - Count Line Chart
 		The count line chart shows the amount of transactions against the currency. 
 	Graph - Pie chart
 		The Pie chart shows a representation of the ratio of the countries from which the transactions are originating.
 	Graph - Line Chart
-		The line chart shows the amount of transactions per year on a line graph which makes it very easy to visualize the change in volume of transactions.
+		The line chart shows the amount of transactions per year on a line graph which makes it very easy to visualize the change 
+		in volume of transactions.
 
 
