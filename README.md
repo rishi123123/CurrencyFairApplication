@@ -70,10 +70,10 @@ For visualization purposes a few messages are inserted into the table on applica
 API endpoints allow crossorigin requests.
 
 ## Test Case 
-	Written using Junit and Mockito at src/it/java. 
+Written using Junit and Mockito at src/it/java. 
 
 GIT HUB URLS :
-https://github.com/rishi123123/CurrencyFairApplication
+https://github.com/rishi123123/CurrencyFairApplication<br>
 https://github.com/RishikeshChirammelAjit
 
 # Testing the application.
